@@ -98,6 +98,7 @@ section>div {
     cursor: pointer;
 }
 
+
 section>div:hover {
     background-color: rgb(249, 242, 242);
     border-radius: 10px;

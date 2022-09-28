@@ -3,12 +3,14 @@ let header = document.querySelector("header");
 
 let options = {
     root: null,
-    rootMargin: '',
+    rootMargin: '-50px',
     threshold: 0,
 }
 
-let observer = new IntersectionObserver(() => {
-    navbar.classList.toggle("show")
+let observer = new IntersectionObserver((entries) => {
+    let ent = entries[0];
+    ent.isIntersecting === true ? navbar.classList.add("show") : navbar.classList.remove("show");
+
 }, options);
 
 
