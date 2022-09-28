@@ -1,0 +1,114 @@
+/* Scroll Navbar */
+#navbar {
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    height: 50px;
+    box-shadow: 0 8px 26px 0 rgb(0 0 0 / 16%);
+    background-color: #fff;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    transition: 0.3s linear;
+
+}
+
+.show {
+    transform: translateY(-100%);
+    overflow: hidden;
+}
+
+
+#search {
+    border: 1px solid grey;
+    width: 40%;
+    background-color: #fff;
+    padding: 0 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+#search>input,
+#search>i {
+    border: none;
+    outline: none;
+    font-size: 18px;
+    margin-left: 10px;
+    color: grey;
+}
+
+#list {
+    display: flex;
+    align-items: center;
+}
+
+#list>div:last-child {
+    background-color: rgb(226, 226, 247);
+    color: blue;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#list>div:last-child>h1 {
+    font-size: 20px;
+}
+
+#list>div {
+    text-align: center;
+    margin: 5px;
+    margin: 10px;
+    font-size: 15px;
+    padding: 5px;
+}
+
+#list>div>img {
+    width: 25px;
+}
+
+
+
+
+
+/* Hero Section Navbar */
+
+section {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, auto);
+    width: 70%;
+    padding: 30px;
+    gap: 10px 10px;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    position: relative;
+    background-color: #fff;
+    top: 500px;
+    left: 15%;
+}
+
+section>div {
+    text-align: center;
+    padding: 20px 20px 10px 20px;
+    cursor: pointer;
+}
+
+section>div:hover {
+    background-color: rgb(249, 242, 242);
+    border-radius: 10px;
+}
+
+section>div:nth-child(7):hover,
+section>div:nth-child(12):hover {
+    background-color: #fff;
+    cursor: auto;
+}
+
+section>div>img {
+    width: 20%;
+}

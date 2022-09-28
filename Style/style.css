@@ -33,10 +33,19 @@ nav>img {
     width: 10%;
 }
 
+.header {
+    height: 850px;
+}
+
 header {
     background: linear-gradient(180deg, rgba(0, 0, 0, .16), rgba(0, 0, 0, .8)), url('https://res.cloudinary.com/urbanclap/image/upload/images/growth/home-screen/1615375782838-f890f8.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
+    height: 600px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 header>h1 {
