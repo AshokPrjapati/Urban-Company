@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    position: relative;
+}
+
+
+/* Navbar */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    border-bottom: 2px solid #e3e3e3;
+}
+
+.nav>div {
+    display: flex;
+}
+
+.nav>div>img {
+    margin-right: 10px;
+    width: 38px;
+}
+
+.nav>ul {
+    list-style: none;
+    display: flex;
+    font-size: 18px;
+}
+
+.nav>ul>li {
+    margin: 10px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+
+.hero {
+    display: flex;
+    height: 350px;
+    padding: 40px 0;
+    margin: 10px 0;
+    border-bottom: 3px solid #e3e3e3;
+}
+
+.hero>div:first-child {
+    width: 40%;
+    display: grid;
+    align-items: center;
+}
+
+.hero>div:first-child>div>button {
+    background-color: #fff;
+    padding: 10px 15px;
+    border: 1px solid #e3e3e3;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.hero>div:first-child>div>button>i,
+.hero>div:first-child>div>p>i {
+    color: grey;
+    padding: 0 5px;
+}
+
+.hero>div:first-child>div>h1 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+
+
+/* card Section */
+.card {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 10px;
+    padding: 20px 0;
+    border-bottom: 3px solid #e3e3e3;
+}
+
+.card>div {
+    font-size: 14px;
+    color: #b4b2b2;
+    cursor: pointer;
+    text-align: center;
+}
+
+.card>div>img {
+    width: 80%;
+    border-radius: 5px;
+}
+
+/* video Slider */
+.slider {
+    width: 80%;
+}
+
+.slider>div {
+    display: none;
+}
+
+.slider>div>img {
+    display: block;
+    margin-left: 36%;
+    width: 480px;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
