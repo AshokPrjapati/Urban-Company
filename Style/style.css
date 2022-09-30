@@ -374,6 +374,10 @@ footer>div>p {
     cursor: pointer;
 }
 
+.social>i:hover {
+    color: rgb(227, 227, 227);
+}
+
 
 /* Login Page */
 .side-page {
