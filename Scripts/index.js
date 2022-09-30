@@ -48,19 +48,19 @@ let navbarContent = `<div id="search">
 </div>`
 displayNavbar(navbarContent);
 function displayNavbar(html) {
-    navbar.innerHTML = html;
+  navbar.innerHTML = html;
 }
 let headerClass = document.querySelector(".header");
 
 let options = {
-    root: null,
-    rootMargin: '-50px',
-    threshold: 0,
+  root: null,
+  rootMargin: '-50px',
+  threshold: 0,
 }
 
 let observer = new IntersectionObserver((entries) => {
-    let ent = entries[0];
-    ent.isIntersecting === true ? navbar.classList.add("show") : navbar.classList.remove("show");
+  let ent = entries[0];
+  ent.isIntersecting === true ? navbar.classList.add("show") : navbar.classList.remove("show");
 
 }, options);
 
@@ -100,61 +100,61 @@ let loginContent = `<div class="head">
 <button>Continue</button>`;
 document.querySelector(".login").addEventListener("click", () => displaySidePage(loginContent));
 function displaySidePage(html) {
-    document.querySelector(".side-page").innerHTML = null;
-    document.querySelector(".side-page").innerHTML = html;
-    header.classList.add("active");
-    document.querySelector(".cross").addEventListener("click", () => header.classList.remove("active"));
+  document.querySelector(".side-page").innerHTML = null;
+  document.querySelector(".side-page").innerHTML = html;
+  header.classList.add("active");
+  document.querySelector(".cross").addEventListener("click", () => header.classList.remove("active"));
 }
 
 
 // Header Section
 let NavCard = [
-    {
-        url: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_64/t_high_res_template/images/growth/home-screen/1609757635235-1a139e.png",
-        title: "Salon for Women"
-    },
-    {
-        url: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_64/t_high_res_template/images/growth/home-screen/1629973621437-ce5af9.png",
-        title: "Hair Services for Women",
-    },
-    {
-        url: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_64/t_high_res_template/categories/category_v2/category_1312fb60.png",
-        title: "Women's Therapies"
-    },
-    {
-        url: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_64/t_high_res_template/images/growth/home-screen/1609757629780-2b2187.png",
-        title: "Salon for Mens"
-    },
-    {
-        url: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_64/t_high_res_template/images/growth/home-screen/1609757731250-ba3308.png",
-        title: "Men's Therapies"
-    },
-    {
-        url: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_64/t_high_res_template/categories/category_v2/category_72d18950.png",
-        title: "AC/Appliances"
-    },
-    {
+  {
+    url: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_64/t_high_res_template/images/growth/home-screen/1609757635235-1a139e.png",
+    title: "Salon for Women"
+  },
+  {
+    url: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_64/t_high_res_template/images/growth/home-screen/1629973621437-ce5af9.png",
+    title: "Hair Services for Women",
+  },
+  {
+    url: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_64/t_high_res_template/categories/category_v2/category_1312fb60.png",
+    title: "Women's Therapies"
+  },
+  {
+    url: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_64/t_high_res_template/images/growth/home-screen/1609757629780-2b2187.png",
+    title: "Salon for Mens"
+  },
+  {
+    url: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_64/t_high_res_template/images/growth/home-screen/1609757731250-ba3308.png",
+    title: "Men's Therapies"
+  },
+  {
+    url: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_64/t_high_res_template/categories/category_v2/category_72d18950.png",
+    title: "AC/Appliances"
+  },
+  {
 
-    },
-    {
-        url: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_64/t_high_res_template/images/growth/home-screen/1631679515206-a69389.png",
-        title: "Home Painting"
-    },
-    {
-        url: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_64/t_high_res_template/categories/category_v2/category_6b1f5250.png",
-        title: "Cleaning & pest Control"
-    },
-    {
-        url: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_64/t_high_res_template/categories/category_v2/category_07f29980.jpeg",
-        title: "Electricians"
-    },
-    {
-        url: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_64/t_high_res_template/categories/category_v2/category_6fbad370.png",
-        title: "Plumbers And Carpenters"
-    },
-    {
+  },
+  {
+    url: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_64/t_high_res_template/images/growth/home-screen/1631679515206-a69389.png",
+    title: "Home Painting"
+  },
+  {
+    url: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_64/t_high_res_template/categories/category_v2/category_6b1f5250.png",
+    title: "Cleaning & pest Control"
+  },
+  {
+    url: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_64/t_high_res_template/categories/category_v2/category_07f29980.jpeg",
+    title: "Electricians"
+  },
+  {
+    url: "https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_64/t_high_res_template/categories/category_v2/category_6fbad370.png",
+    title: "Plumbers And Carpenters"
+  },
+  {
 
-    }
+  }
 
 ];
 let cards = document.querySelector(".cards");
@@ -162,25 +162,25 @@ let cards = document.querySelector(".cards");
 display(NavCard);
 
 function display(arr) {
-    arr.forEach((el) => {
-        if (el.url == undefined || el.title == undefined) {
-            let container = document.createElement("div");
-            cards.append(container);
-        }
-        else {
-            let container = document.createElement("div");
+  arr.forEach((el) => {
+    if (el.url == undefined || el.title == undefined) {
+      let container = document.createElement("div");
+      cards.append(container);
+    }
+    else {
+      let container = document.createElement("div");
 
-            let img = document.createElement("img");
-            img.src = el.url;
+      let img = document.createElement("img");
+      img.src = el.url;
 
-            let p = document.createElement("p");
-            p.innerText = el.title;
+      let p = document.createElement("p");
+      p.innerText = el.title;
 
-            container.append(img, p);
-            cards.append(container);
-            container.addEventListener("click", () => window.location.href = "./salon.html");
-        }
-    })
+      container.append(img, p);
+      cards.append(container);
+      container.addEventListener("click", () => window.location.href = "./salon.html");
+    }
+  })
 }
 
 
