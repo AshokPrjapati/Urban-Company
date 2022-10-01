@@ -25,6 +25,16 @@ nav>ul>li {
     cursor: pointer;
 }
 
+nav>ul>li>a {
+    text-decoration: none;
+    color: #fff;
+}
+
+nav>ul>li>a:hover,
+nav>ul>li:hover {
+    color: rgb(213, 207, 207);
+}
+
 nav>ul>li:nth-child(2) {
     text-decoration: underline;
 }

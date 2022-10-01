@@ -74,17 +74,25 @@ function redirect(el) {
     document.location.href = el.ref;
 }
 
-let options = {
-    root: null,
-    rootMargin: '-10px',
-    threshold: 0
-}
+let d = document.querySelector(".detail");
+let a = document.querySelector(".about");
+let f = document.querySelector(".footer");
 
 let observer = new IntersectionObserver((entries) => {
     let ent = entries[0];
     ent.isIntersecting === false ? document.body.classList.add("sticky") : document.body.classList.remove("sticky");
-}, options);
+});
+
+let observer1 = new IntersectionObserver((entries) => {
+    let ent = entries[0];
+    console.log(ent);
+    if (ent.isIntersecting === true) {
+        document.body.classList.add("stop");
+    } else document.body.classList.remove("stop");
+});
+
 observer.observe(header);
+observer1.observe(d);
 
 // sliding Images
 
