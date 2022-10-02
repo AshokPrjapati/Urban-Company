@@ -55,6 +55,10 @@
     justify-content: center;
 }
 
+#list>div:last-child>h1>a {
+    text-decoration: none;
+}
+
 #list>div:last-child>h1 {
     font-size: 20px;
 }
@@ -72,6 +76,12 @@
     background-color: rgb(231, 231, 231);
     border-radius: 5px;
     transform: scale(1.05);
+}
+
+#list>div:last-child:hover {
+    background-color: rgb(226, 226, 247);
+    color: blue;
+    border-radius: 50%;
 }
 
 #list>div>img {
@@ -119,4 +129,29 @@
 
 .cards>div>img {
     width: 20%;
+}
+
+.otp {
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 10px;
+    padding: 0 10px;
+}
+
+.otp input {
+    width: 40px;
+    padding: 5px;
+    outline: none;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 3px;
+    border: .5px solid grey;
+    margin: 30px 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
