@@ -73,30 +73,31 @@ document.querySelector("#location>div").addEventListener("click", () => header.c
 
 
 // side page
-let loginContent = `<div class="head">
-<div class="cross">
-  <ul>
+
+let loginContent =
+  `<div class="head">
+    <div class="cross">
+   <ul>
     <li id="bar1"></li>
     <li id="bar2"></li>
-  </ul>
-</div>
+   </ul>
+  </div>
 
-<p>Please Login To Continue</p>
-</div>
-<div class="number">
-<div>
-  <select name="" id="code">
-    <option value="+91">+91</option>
-    <option value="+61">+61</option>
-    <option value="+65">+65</option>
-    <option value="+1">+1</option>
-    <option value="+966">+966</option>
-    <option value="+971">+971</option>
-  </select>
-</div>
-
-<input type="Number" placeholder="Enter Phone Number" />
-</div>
+  <p>Please Login To Continue</p>
+  </div>
+  <div class="number">
+    <div>
+      <select name="" id="code">
+        <option value="+91">+91</option>
+        <option value="+61">+61</option>
+        <option value="+65">+65</option>
+        <option value="+1">+1</option>
+        <option value="+966">+966</option>
+        <option value="+971">+971</option>
+      </select>
+    </div>
+    <input type="number" placeholder="Enter Phone Number" />
+  </div>
 <button>Continue</button>`;
 document.querySelector(".login").addEventListener("click", () => displaySidePage(loginContent));
 function displaySidePage(html) {
@@ -104,8 +105,8 @@ function displaySidePage(html) {
   document.querySelector(".side-page").innerHTML = html;
   header.classList.add("active");
   document.querySelector(".cross").addEventListener("click", () => header.classList.remove("active"));
+  document.querySelector(".prime").addEventListener("click", () => window.location.href = "./salon.html");
 }
-
 
 // Header Section
 let NavCard = [
@@ -178,9 +179,102 @@ function display(arr) {
 
       container.append(img, p);
       cards.append(container);
-      container.addEventListener("click", () => window.location.href = "./salon.html");
+      // container.addEventListener("click", () => window.location.href = "./salon.html");
     }
   })
 }
 
 
+let salonContent =
+  `<div class="head">
+    <div class="cross">
+      <ul>
+       <li id="bar1"></li>
+       <li id="bar2"></li>
+      </ul>
+    </div>
+
+   <p>Salon For Women</p>
+  </div>
+<div class="salon">
+  <div class="prime">
+      <div>
+        <img
+        src="https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep/t_medium_res_category/images/growth/home-screen/1603078782132-dfcd55.jpeg"
+        alt=""
+        />
+      </div>      
+      <div>
+        <p>Salon Prime</p>
+        <i class="fa-solid fa-angle-right"></i>
+      </div>     
+  </div>
+  <div class="classic">
+    <div>
+    <img
+      src="https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep/t_medium_res_category/images/growth/home-screen/1603078787966-226e17.jpeg"
+      alt=""
+    />
+    </div>
+    <div><p>Salon Classic</p>
+      <i class="fa-solid fa-angle-right"></i></div>  
+    </div>
+  </div>
+</div>`;
+
+
+document.querySelector(".cards>div:first-child").addEventListener("click", () => displaySidePage(salonContent));
+
+document.querySelector(".login").addEventListener("click", () => {
+  let button = document.querySelector(".active>.side-page>button");
+  button.addEventListener("click", register);
+});
+
+function register() {
+  let content = `
+  <div class="head">
+<div class="cross">
+<ul>
+<li id="bar1"></li>
+<li id="bar2"></li>
+</ul>
+</div>
+
+<p>Please Enter OTP</p>
+</div>
+  <div class="otp">
+  <input type="number" />
+  <input type="number" />
+  <input type="number" />
+  <input type="number" />
+</div>
+<button>Continue</button>`
+  let number = document.querySelector(".active>.side-page>.number>input").value;
+
+  number = number + "";
+  let numARR = JSON.parse(localStorage.getItem("num")) || [];
+  if (number.length != 10) alert("Please Enter a Valid Number");
+  else {
+    if (numARR.length == 0) {
+      numARR.push(number);
+      localStorage.setItem("num", JSON.stringify(numARR));
+      displaySidePage(content)
+    } else {
+      let flag = false;
+      for (let i = 0; i < numARR.length; i++) {
+        if (numARR[i] === number) {
+          flag = true;
+          alert("This Number is Already Registered");
+          break;
+        }
+      }
+      if (!flag) {
+        numARR.push(number);
+        localStorage.setItem("num", JSON.stringify(numARR));
+        displaySidePage(content);
+      }
+    }
+  }
+
+
+}
