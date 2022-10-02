@@ -105,7 +105,7 @@ function displaySidePage(html) {
   document.querySelector(".side-page").innerHTML = html;
   header.classList.add("active");
   document.querySelector(".cross").addEventListener("click", () => header.classList.remove("active"));
-  document.querySelector(".prime").addEventListener("click", () => window.location.href = "./salon.html");
+
 }
 
 // Header Section
@@ -223,7 +223,10 @@ let salonContent =
 </div>`;
 
 
-document.querySelector(".cards>div:first-child").addEventListener("click", () => displaySidePage(salonContent));
+document.querySelector(".cards>div:first-child").addEventListener("click", () => {
+  displaySidePage(salonContent);
+  document.querySelector(".prime").addEventListener("click", () => window.location.href = "./salon.html");
+})
 
 document.querySelector(".login").addEventListener("click", () => {
   let button = document.querySelector(".active>.side-page>button");
@@ -248,7 +251,7 @@ function register() {
   <input type="number" />
   <input type="number" />
 </div>
-<button>Continue</button>`
+<button class="finle">Continue</button>`
   let number = document.querySelector(".active>.side-page>.number>input").value;
 
   number = number + "";
@@ -258,7 +261,9 @@ function register() {
     if (numARR.length == 0) {
       numARR.push(number);
       localStorage.setItem("num", JSON.stringify(numARR));
-      displaySidePage(content)
+      displaySidePage(content);
+      let finle = document.querySelector(".finle");
+      finle.addEventListener("click", () => alert("i am"))
     } else {
       let flag = false;
       for (let i = 0; i < numARR.length; i++) {
@@ -272,9 +277,26 @@ function register() {
         numARR.push(number);
         localStorage.setItem("num", JSON.stringify(numARR));
         displaySidePage(content);
+        let finle = document.querySelector(".finle");
+        finle.addEventListener("click", displayLast)
       }
     }
   }
+}
 
-
+function displayLast() {
+  let content =
+    `<div class="head">
+      <div class="cross">
+        <ul>
+          <li id="bar1"></li>
+          <li id="bar2"></li>
+        </ul>
+      </div>
+       <p>Registered</p>
+    </div>
+   
+    <div class="finle"><h4>Your Mobile Number Registered Succesfully</h4></div>
+    `
+  displaySidePage(content);
 }

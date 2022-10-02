@@ -155,3 +155,10 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
+.finle>h4 {
+    color: lightgreen;
+    word-wrap: normal;
+    letter-spacing: .5px;
+    padding: 10px 20px;
+}
