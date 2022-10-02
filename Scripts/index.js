@@ -263,7 +263,8 @@ function register() {
       localStorage.setItem("num", JSON.stringify(numARR));
       displaySidePage(content);
       let finle = document.querySelector(".finle");
-      finle.addEventListener("click", () => alert("i am"))
+      finle.addEventListener("click", displayLast)
+
     } else {
       let flag = false;
       for (let i = 0; i < numARR.length; i++) {
